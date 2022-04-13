@@ -10,29 +10,29 @@ class Solution {
         int val = 1;
         while(rowB <= rowE && colB <= colE){ 
             
+// for right traverse
             for(int i=colB; i<=colE; i++){
                 res[rowB][i] = val++;
             }
             rowB++;
             
+// for down traverse   
             for(int i=rowB; i<=rowE; i++){
                 res[i][colE] = val++;
             }
             colE--;
             
-            // if(colB <= colE){
+// for left traverse
             for(int i=colE; i>=colB; i--){
                 res[rowE][i] = val++;
             }
             rowE--;
-            // }
             
-            // if(rowB <= rowE){
+// for up traverse
             for(int i=rowE; i>=rowB; i--){
                 res[i][colB] = val++;
             }
             colB++;
-            // }
         } 
         
         return res;
