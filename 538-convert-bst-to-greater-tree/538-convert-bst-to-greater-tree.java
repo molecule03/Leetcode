@@ -15,15 +15,13 @@
  */
 class Solution {
     private int sum = 0;
+    
     public TreeNode convertBST(TreeNode root) {
-        
         
         if(root != null){
             convertBST(root.right);
-            sum += root.val;
-            root.val = sum;
+            root.val = (sum += root.val);
             convertBST(root.left);
-            // root.val = sum;
         }
         
         return root;
