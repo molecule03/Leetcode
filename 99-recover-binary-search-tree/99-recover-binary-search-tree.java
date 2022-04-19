@@ -14,34 +14,39 @@
  * }
  */
 class Solution {
-    List<Integer> list = new ArrayList<>();
-    int idx = 0; 
-    
-    public void recoverTree(TreeNode root){
-        
+    TreeNode fir;
+    TreeNode prev;
+    TreeNode adj;
+    TreeNode sec;
+    public void recoverTree(TreeNode root) {
+        prev = new TreeNode(Integer.MIN_VALUE);
         inorder(root);
-        Collections.sort(list);
-        correct(root);
-        // System.out.println(list);
-        // return root;
+        
+        if(fir != null && sec != null){
+            int temp = sec.val;
+            sec.val = fir.val;
+            fir.val = temp;
+        }
+        else if(fir != null && sec == null){
+            int temp = fir.val;
+            fir.val = adj.val;
+            adj.val = temp;
+        }
     }
     
     private void inorder(TreeNode root){
-        if(root == null) return; 
-      
-        inorder(root.left);
-        list.add(root.val);
-        inorder(root.right);
-    }
-    
-    private void correct(TreeNode root){
-        if(root == null) return;
+        if(root == null) return ;
         
-        correct(root.left);
-        if(root.val != list.get(idx)){
-            root.val = list.get(idx);
+        inorder(root.left);
+        if(fir == null && root.val < prev.val){
+            fir = prev;
+            adj = root;
         }
-        idx++;
-        correct(root.right);
+        else if( fir != null && root.val < prev.val){
+            sec = root;
+        }
+        prev = root;
+        
+        inorder(root.right);
     }
 }
