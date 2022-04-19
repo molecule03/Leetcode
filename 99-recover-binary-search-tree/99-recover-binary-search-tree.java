@@ -15,14 +15,14 @@
  */
 class Solution {
     List<Integer> list = new ArrayList<>();
-    int idx = 0;
+    int idx = 0; 
+    
     public void recoverTree(TreeNode root){
         
         inorder(root);
         Collections.sort(list);
-     
         correct(root);
-        System.out.println(list);
+        // System.out.println(list);
         // return root;
     }
     
