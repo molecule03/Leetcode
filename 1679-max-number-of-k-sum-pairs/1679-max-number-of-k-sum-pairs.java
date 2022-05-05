@@ -16,12 +16,12 @@ class Solution {
                 if(x == k-x && map.get(x) < 2)
                     continue;
                 
-                if(map.containsKey(x) && map.get(x) > 1)
+                if(map.get(x) > 1)
                     map.put(x, map.get(x)-1);
                 else
                     map.remove(x);
                 
-                if(map.containsKey(k-x) && map.get(k-x) > 1)
+                if(map.get(k-x) > 1)
                     map.put(k-x, map.get(k-x)-1);
                 else
                     map.remove(k-x);
