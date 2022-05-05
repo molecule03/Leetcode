@@ -5,10 +5,10 @@ class Solution {
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
         
-        int end = -1;
+        int start = -1;
         for(int i=0; i<nums.length; i++){
             if(nums[i] < max){
-                end = i;
+                start = i;
             }
             else{
                 max = nums[i];
@@ -16,16 +16,16 @@ class Solution {
         }
          
         
-        int start = 0;
+        int end = 0;
         for(int i=nums.length-1; i>=0; i--){
             if(nums[i] > min){
-                start = i;
+                end = i;
             }
             else{
                 min = nums[i];
             }
         }
         
-        return end-start+1;
+        return start-end+1;
     }
 }
