@@ -4,6 +4,8 @@ public:
        int start=0, end=-1;
         int max=INT_MIN;
         int min=INT_MAX;
+        
+        
         for(int i=0; i<nums.size(); i++){
             if(nums[i]<max){
                 end=i;
@@ -23,7 +25,11 @@ public:
             }
         }
         
-        // cout<<start<<" "<<end;
+        cout<<start<<" "<<end;
         return end-start+1;
     }
 };
+
+
+    // a = 1
+    // 1 = a
