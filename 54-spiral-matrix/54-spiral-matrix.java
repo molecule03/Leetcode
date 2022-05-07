@@ -1,5 +1,6 @@
 class Solution {
-    boolean[][] vis;
+    boolean[][] vis; 
+    
     public List<Integer> spiralOrder(int[][] res) {
         
         vis = new boolean[res.length][res[0].length];
@@ -14,7 +15,7 @@ class Solution {
             
 // for right traverse
             for(int i=colB; i<=colE; i++){
-                if(!isVis(rowB,i)){
+                if(!isVisited(rowB,i)){
                 list.add(res[rowB][i]); 
                 vis[rowB][i] = true;
                 }
@@ -23,7 +24,7 @@ class Solution {
             
 // for down traverse   
             for(int i=rowB; i<=rowE; i++){
-                  if(!isVis(i,colE)){
+                  if(!isVisited(i,colE)){
                 list.add(res[i][colE]); 
                 vis[i][colE] = true;
                   }
@@ -32,7 +33,7 @@ class Solution {
             
 // for left traverse
             for(int i=colE; i>=colB; i--){
-                  if(!isVis(rowE,i)){
+                  if(!isVisited(rowE,i)){
                 list.add(res[rowE][i]);
                 vis[rowE][i] = true;
                   }
@@ -41,7 +42,7 @@ class Solution {
             
 // for up traverse\
             for(int i=rowE; i>=rowB; i--){
-                  if(!isVis(i,colB)){
+                  if(!isVisited(i,colB)){
                 list.add(res[i][colB]);
                 vis[i][colB] = true;
                   }
@@ -52,7 +53,7 @@ class Solution {
         return list;
     }
     
-    private boolean isVis(int x, int y){
+    private boolean isVisited(int x, int y){
         return vis[x][y];
     }
 }
