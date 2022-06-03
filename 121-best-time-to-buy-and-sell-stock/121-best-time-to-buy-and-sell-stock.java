@@ -8,7 +8,8 @@ class Solution {
                 minPriceIdx = curPriceIdx;
             }
             else{
-                maxProfit = Math.max(maxProfit, (prices[curPriceIdx]-prices[minPriceIdx]));
+                int curProfit = prices[curPriceIdx]-prices[minPriceIdx];
+                maxProfit = Math.max(maxProfit, curProfit);
             }
             
         }
