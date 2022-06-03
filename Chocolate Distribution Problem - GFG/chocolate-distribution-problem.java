@@ -42,10 +42,9 @@ class Solution
         int left = 0;
         int right = m-1;
         long minDiff = Integer.MAX_VALUE;
-        for(int i=0; right<n && i<n ; i++){
+        while(right < n){
             long curDiff = a.get(right++)-a.get(left++);
             minDiff = Math.min(minDiff, curDiff);
-            
         }
         
         return minDiff;
