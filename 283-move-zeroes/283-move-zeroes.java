@@ -13,3 +13,16 @@ class Solution {
         }
     }
 }
+
+
+//         int i;
+//         for(i = 0; i<nums.length; i++){
+//             if(nums[i] == 0) break;
+//         }
+        
+//         for(int j=i+1; j<nums.length; j++){
+//             if(nums[i] == 0 &&  nums[i] != nums[j]){
+//                 swap(i, j, nums);
+//                 i++;
+//             }
+//         }
